@@ -43,4 +43,7 @@ public class Interrupted {
         }
     }
 }
-
+/*
+SleepThread interrupted is false
+BusyThread interrupted is true
+ */

@@ -52,3 +52,16 @@ public class Priority {
         }
     }
 }
+/*
+done.
+Job Priority : 1, Count : 9560257
+Job Priority : 1, Count : 385876
+Job Priority : 1, Count : 16023308
+Job Priority : 1, Count : 23969111
+Job Priority : 1, Count : 9229970
+Job Priority : 10, Count : 23137608
+Job Priority : 10, Count : 16672555
+Job Priority : 10, Count : 24086779
+Job Priority : 10, Count : 19041254
+Job Priority : 10, Count : 23170081
+ */

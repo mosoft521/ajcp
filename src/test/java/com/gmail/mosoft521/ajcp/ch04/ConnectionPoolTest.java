@@ -74,3 +74,8 @@ public class ConnectionPoolTest {
         }
     }
 }
+/*
+total invoke: 1000
+got connection:  822
+not got connection 178
+ */

@@ -27,3 +27,6 @@ public class Profiler {
         System.out.println("Cost: " + Profiler.end() + " mills");
     }
 }
+/*
+Cost: 1001 mills
+ */

@@ -35,3 +35,16 @@ public class Join {
         }
     }
 }
+/*
+main terminate.
+0 terminate.
+1 terminate.
+2 terminate.
+3 terminate.
+4 terminate.
+5 terminate.
+6 terminate.
+7 terminate.
+8 terminate.
+9 terminate.
+ */

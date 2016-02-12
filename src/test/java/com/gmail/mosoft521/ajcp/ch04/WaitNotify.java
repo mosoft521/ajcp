@@ -60,3 +60,9 @@ public class WaitNotify {
         }
     }
 }
+/*
+Thread[WaitThread,5,main] flag is true. wait @ 18:05:41
+Thread[NotifyThread,5,main] hold lock. notify @ 18:05:42
+Thread[NotifyThread,5,main] hold lock again. sleep @ 18:05:47
+Thread[WaitThread,5,main] flag is false. running @ 18:05:52
+ */
