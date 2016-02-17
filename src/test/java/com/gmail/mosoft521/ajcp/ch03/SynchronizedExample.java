@@ -13,6 +13,6 @@ class SynchronizedExample {
         if (flag) {
             int i = a;
             //……
-        } //释放锁
-    }
+        }
+    }//释放锁
 }
