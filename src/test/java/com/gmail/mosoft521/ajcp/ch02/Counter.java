@@ -20,7 +20,8 @@ public class Counter {
             Thread t = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int i = 0; i < 10000; i++) {
+//                    for (int i = 0; i < 10000; i++) {
+                    for (int i = 0; i < 10000; ++i) {
                         cas.count();
                         cas.safeCount();
                     }
@@ -28,10 +29,11 @@ public class Counter {
             });
             ts.add(t);
         }
+
         for (Thread t : ts) {
             t.start();
-
         }
+
         // 等待所有线程执行完成
         for (Thread t : ts) {
             try {
@@ -41,9 +43,9 @@ public class Counter {
             }
 
         }
-        System.out.println(cas.i);
-        System.out.println(cas.atomicI.get());
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println("i :" + cas.i);
+        System.out.println("aI:" + cas.atomicI.get());
+        System.out.println("time:" + (System.currentTimeMillis() - start));
     }
 
     /**
@@ -52,7 +54,7 @@ public class Counter {
     private void safeCount() {
         for (; ; ) {
             int i = atomicI.get();
-            boolean suc = atomicI.compareAndSet(i, ++i);
+            boolean suc = atomicI.compareAndSet(i, ++i);//CAS操作
             if (suc) {
                 break;
             }
@@ -67,7 +69,16 @@ public class Counter {
     }
 }
 /*
+//第一次：
 962946
 1000000
 89
+//修改代码后，第二次
+i :997227
+aI:1000000
+time:117
+//修改代码，i++ => ++i
+i :999622
+aI:1000000
+time:280
  */
