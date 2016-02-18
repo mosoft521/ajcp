@@ -15,7 +15,7 @@ public class Daemon {
         @Override
         public void run() {
             try {
-                SleepUtils.second(100);
+                SleepUtils.second(10);
             } finally {
                 System.out.println("DaemonThread finally run.");
             }
@@ -23,5 +23,5 @@ public class Daemon {
     }
 }
 /*
-
+没有任何输出
  */
