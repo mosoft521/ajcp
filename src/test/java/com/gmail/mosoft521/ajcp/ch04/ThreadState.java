@@ -27,7 +27,7 @@ public class ThreadState {
         @Override
         public void run() {
             while (true) {
-                SleepUtils.second(100);
+                SleepUtils.second(10);
             }
         }
     }
@@ -57,7 +57,7 @@ public class ThreadState {
         public void run() {
             synchronized (Blocked.class) {
                 while (true) {
-                    SleepUtils.second(100);
+                    SleepUtils.second(10);
                 }
             }
         }
@@ -69,7 +69,7 @@ public class ThreadState {
         public void run() {
             lock.lock();
             try {
-                SleepUtils.second(100);
+                SleepUtils.second(10);
             } finally {
                 lock.unlock();
             }
@@ -80,4 +80,25 @@ public class ThreadState {
 }
 /*
 没有任何输出？？？
+>>第一次用jstack看
+D:\Users\alvin>jps
+8544 Launcher
+8932 RemoteMavenServer
+8120
+7020 AppMain
+8204 Jps
+
+D:\Users\alvin>jstack 7020 >> 7020-dump.txt
+
+>>等10s后再看
+D:\Users\alvin>jps
+7292 AppMain
+7180 Launcher
+8880 Jps
+8932 RemoteMavenServer
+8120
+
+D:\Users\alvin>jstack 7292 >> 7292-dump.txt
+
+>>两者差异在于：SyncThread-1和SyncThread-2执行结束了
  */

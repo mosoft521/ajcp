@@ -1,0 +1,120 @@
+2016-02-18 13:37:22
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (24.79-b02 mixed mode):
+
+"DestroyJavaVM" prio=6 tid=0x00000000001de800 nid=0x1c34 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"SyncThread-2" prio=6 tid=0x000000000beae800 nid=0x6dc waiting on condition [0x000000000d4fe000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007d5a78c70> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:834)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:867)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1197)
+	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:214)
+	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:290)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$Sync.run(ThreadState.java:70)
+	at java.lang.Thread.run(Thread.java:745)
+
+"SyncThread-1" prio=6 tid=0x000000000bead800 nid=0x20e0 waiting on condition [0x000000000d36e000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Thread.java:340)
+	at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:360)
+	at com.gmail.mosoft521.ajcp.ch04.SleepUtils.second(SleepUtils.java:11)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$Sync.run(ThreadState.java:72)
+	at java.lang.Thread.run(Thread.java:745)
+
+"BlockedThread-2" prio=6 tid=0x000000000beaa800 nid=0x228c waiting on condition [0x000000000d0af000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Thread.java:340)
+	at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:360)
+	at com.gmail.mosoft521.ajcp.ch04.SleepUtils.second(SleepUtils.java:11)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$Blocked.run(ThreadState.java:60)
+	- locked <0x00000007d5a83270> (a java.lang.Class for com.gmail.mosoft521.ajcp.ch04.ThreadState$Blocked)
+	at java.lang.Thread.run(Thread.java:745)
+
+"BlockedThread-1" prio=6 tid=0x000000000beaa000 nid=0x2024 waiting for monitor entry [0x000000000cd7f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$Blocked.run(ThreadState.java:60)
+	- waiting to lock <0x00000007d5a83270> (a java.lang.Class for com.gmail.mosoft521.ajcp.ch04.ThreadState$Blocked)
+	at java.lang.Thread.run(Thread.java:745)
+
+"WaitingThread" prio=6 tid=0x000000000be7a000 nid=0x1ffc in Object.wait() [0x000000000cf3f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007d5a805e0> (a java.lang.Class for com.gmail.mosoft521.ajcp.ch04.ThreadState$Waiting)
+	at java.lang.Object.wait(Object.java:503)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$Waiting.run(ThreadState.java:44)
+	- locked <0x00000007d5a805e0> (a java.lang.Class for com.gmail.mosoft521.ajcp.ch04.ThreadState$Waiting)
+	at java.lang.Thread.run(Thread.java:745)
+
+"TimeWaitingThread" prio=6 tid=0x000000000be79800 nid=0x2164 waiting on condition [0x000000000cadf000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Thread.java:340)
+	at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:360)
+	at com.gmail.mosoft521.ajcp.ch04.SleepUtils.second(SleepUtils.java:11)
+	at com.gmail.mosoft521.ajcp.ch04.ThreadState$TimeWaiting.run(ThreadState.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Monitor Ctrl-Break" daemon prio=6 tid=0x000000000be78800 nid=0x2208 runnable [0x000000000cc6f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:398)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	- locked <0x00000007d5af4b28> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:530)
+	at java.net.ServerSocket.accept(ServerSocket.java:498)
+	at com.intellij.rt.execution.application.AppMain$1.run(AppMain.java:90)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Service Thread" daemon prio=6 tid=0x000000000bdc0000 nid=0x714 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" daemon prio=10 tid=0x000000000bdbe000 nid=0x1c1c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" daemon prio=10 tid=0x000000000bdb9000 nid=0x1ed0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" daemon prio=10 tid=0x000000000bdb6800 nid=0x1198 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x000000000ac2f800 nid=0x1cb4 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x000000000abc8000 nid=0x1b58 in Object.wait() [0x000000000bdaf000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007d5904858> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	- locked <0x00000007d5904858> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" daemon prio=10 tid=0x000000000abbf000 nid=0x22a8 in Object.wait() [0x000000000bb9f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007d5904470> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:503)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:133)
+	- locked <0x00000007d5904470> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" prio=10 tid=0x000000000abbb800 nid=0x11f0 runnable 
+
+"GC task thread#0 (ParallelGC)" prio=6 tid=0x00000000020ce000 nid=0x21d4 runnable 
+
+"GC task thread#1 (ParallelGC)" prio=6 tid=0x00000000020d0000 nid=0x138 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=6 tid=0x00000000020d1800 nid=0x1e6c runnable 
+
+"GC task thread#3 (ParallelGC)" prio=6 tid=0x00000000020d3800 nid=0x1d14 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x000000000bdc9800 nid=0x1fa4 waiting on condition 
+
+JNI global references: 144
+

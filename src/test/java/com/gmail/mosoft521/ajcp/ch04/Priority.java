@@ -43,10 +43,10 @@ public class Priority {
 
         public void run() {
             while (notStart) {
-                Thread.yield();
+                Thread.yield();//让步
             }
             while (notEnd) {
-                Thread.yield();
+                Thread.yield();//让步
                 jobCount++;
             }
         }
